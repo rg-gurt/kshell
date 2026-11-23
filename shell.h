@@ -18,6 +18,6 @@ bool ksh_exec(const char *line);
  * Runs the read -> execute loop until the user exits.
  * At end of input (Ctrl + D), prints a newline and stops.
  */
-void ksh_loop(void);
+void ksh_loop(void); //void loop void takes no arguments or parameters and just runs
 
 #endif /* SHELL_H_ */
