@@ -1,6 +1,7 @@
 #include "shell.h"
 #include "input.h"
 #include "parse.h"
+#include "builtins.h"
 
 #include <stdio.h>
 #include <string.h>
@@ -36,6 +37,9 @@ bool ksh_exec(const char *line){
     }else if(strcmp(args[0], "exit") == 0){
         return false;
     }else{
+        if (!ksh_run_builtin(args)) {
+        printf("kshell: command not found: %s\n", args[0]);
+    } 
         for(int i = 0; i < words; i++){
             printf("%s\n", args[i]);
         }
